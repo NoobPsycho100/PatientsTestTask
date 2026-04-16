@@ -1,0 +1,1 @@
+﻿ALTER ROLE [db_owner] ADD MEMBER [PatientsTestTaskUser];

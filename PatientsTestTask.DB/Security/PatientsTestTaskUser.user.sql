@@ -1,0 +1,1 @@
+﻿CREATE USER [PatientsTestTaskUser] FOR LOGIN [PatientsTestTaskUser];

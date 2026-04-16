@@ -1,0 +1,2 @@
+﻿CREATE LOGIN [PatientsTestTaskUser]
+    WITH PASSWORD = N'123456';

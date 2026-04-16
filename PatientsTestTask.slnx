@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="PatientsTestTask.Core/PatientsTestTask.Core.csproj" />
+  <Project Path="PatientsTestTask.Data/PatientsTestTask.Data.csproj" />
+  <Project Path="PatientsTestTask.DB/PatientsTestTask.DB.sqlproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="PatientsTestTask.Web/PatientsTestTask.Web.csproj" />
+</Solution>
