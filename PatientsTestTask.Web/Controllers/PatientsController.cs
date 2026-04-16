@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+using PatientsTestTask.Core;
 using PatientsTestTask.Core.Domain;
 using PatientsTestTask.Core.Services;
+using PatientsTestTask.Web.Model;
 
 namespace PatientsTestTask.Web.Controllers;
 
@@ -15,10 +17,27 @@ public class PatientsController : ControllerBase
         _patientsService = patientsService;
     }
 
+    [HttpGet]
+    public async Task<PageResult<Patient>> GetPaged([FromQuery] GetPatientsRequest request)
+    {
+        var patient = await _patientsService.GetPatients(request.BirthDateFrom, request.BirthDateTo, request.Page, request.PageSize);
+        return patient;
+    }
+
     [Route("{id}")]
     [HttpGet]
-    public async Task<Patient?> GetById([FromRoute] string id)
+    public async Task<ActionResult<Patient>> GetById([FromRoute] string id)
     {
-        return await _patientsService.GetPatientById(Guid.Parse(id));
+        if (!Guid.TryParse(id, out var patientId))
+        {
+            return BadRequest();
+        }
+
+        var patient = await _patientsService.GetPatientById(patientId);
+        if (patient == null)
+        {
+            return NotFound();
+        }
+        return patient;
     }
 }

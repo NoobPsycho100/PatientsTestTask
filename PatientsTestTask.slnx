@@ -1,7 +1,7 @@
 <Solution>
   <Project Path="PatientsTestTask.Core/PatientsTestTask.Core.csproj" />
   <Project Path="PatientsTestTask.Data/PatientsTestTask.Data.csproj" />
-  <Project Path="PatientsTestTask.DB/PatientsTestTask.DB.sqlproj">
+  <Project Path="PatientsTestTask.DB/PatientsTestTask.DB.sqlproj" Id="51069c28-0740-40bd-884c-69c55c3b0df2">
     <Build />
     <Deploy />
   </Project>
