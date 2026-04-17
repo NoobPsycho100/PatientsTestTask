@@ -17,7 +17,7 @@ public static class SwaggerSetup
 
     public static void UseOpenApiAndSwagger(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
+        //if (app.Environment.IsDevelopment())
         {
             // https://localhost:7165/openapi/v1.json
             app.MapOpenApi();
