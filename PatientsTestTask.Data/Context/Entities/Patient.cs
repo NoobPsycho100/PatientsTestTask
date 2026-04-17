@@ -9,4 +9,6 @@ internal class Patient
     public required DateTime BirthDate { get; set; }
 
     public bool? IsActive { get; set; }
+
+    public PatientName? Name { get; set; }
 }

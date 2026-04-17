@@ -3,7 +3,7 @@ using PatientsTestTask.Core;
 using PatientsTestTask.Core.Domain;
 using PatientsTestTask.Core.Services;
 using PatientsTestTask.Data.Context;
-
+using PatientsTestTask.Data.Context.Entities;
 using Patient = PatientsTestTask.Core.Domain.Patient;
 
 namespace PatientsTestTask.Data.Services;
@@ -15,6 +15,15 @@ public class PatientsService: IPatientsService
     public PatientsService(IDbContextFactory<PatientsContext> contextFactory)
     {
         _contextFactory = contextFactory;
+    }
+
+    public async Task<bool> IsPatientExists(Guid id)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            return await GetPatientsQuery(context)
+                .AnyAsync(x => x.Name.Id == id);
+        }
     }
 
     public async Task<PageResult<Patient>> GetPatients(DateTime? birthDateFrom, DateTime? birthDateTo, int page, int pageSize = 100)
@@ -45,26 +54,104 @@ public class PatientsService: IPatientsService
         }
     }
 
+    public async Task<Patient> AddPatient(Patient patient)
+    {
+        var id = patient.Name.Id ?? Guid.NewGuid();
+        var patientDto = new Context.Entities.Patient
+        {
+            Id = id,
+            BirthDate = patient.BirthDate,
+            Gender = patient.Gender?.ToString(),
+            IsActive = patient.IsActive,
+        };
+        var patientNameDto = new Context.Entities.PatientName
+        {
+            Id = id,
+            Family = patient.Name.Family,
+            Use = patient.Name.Use,
+        };
+        var patientGivenNames = patient.Name.Given
+            ?.Select((x, i) => new Context.Entities.PatientGivenName
+            {
+                PatientId = id,
+                Name = x,
+                Position = (byte)i,
+            }).ToArray() ?? [];
+
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            context.AddRange(patientGivenNames);
+            context.Add(patientNameDto);
+            context.Add(patientDto);
+            await context.SaveChangesAsync();
+
+            return await GetPatientsQuery(context)
+                .SingleAsync(x => x.Name.Id == id);
+        }
+    }
+
+    public async Task<Patient?> UpdatePatient(Guid id, Patient patient)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            var patientDto = await context.Patients
+                .Include(x => x.Name)
+                .Include(x => x.Name.GivenNames)
+                .Where(x => x.Id == id)
+                .SingleOrDefaultAsync();
+
+            if (patientDto == null)
+            {
+                return null;
+            }
+
+            patientDto.Gender = patient.Gender?.ToString();
+            patientDto.BirthDate = patient.BirthDate;
+            patientDto.IsActive = patient.IsActive;
+            patientDto.Name.Use = patient.Name.Use;
+            patientDto.Name.Family = patient.Name.Family;
+            patientDto.Name.GivenNames = patient.Name.Given
+                ?.Select((x, i) => new PatientGivenName
+                {
+                    PatientId = id,
+                    Name = x,
+                    Position = (byte)i,
+                }).ToList() ?? [];
+
+            await context.SaveChangesAsync();
+
+            return await GetPatientsQuery(context)
+                .SingleAsync(x => x.Name.Id == id);
+        }
+    }
+
+    public async Task<bool> DeletePatient(Guid id)
+    {
+        using (var context = _contextFactory.CreateDbContext())
+        {
+            var deletedRows = await context.Patients.Where(x => x.Id == id).ExecuteDeleteAsync();
+
+            return deletedRows > 0;
+        }
+    }
+
     private static IQueryable<Patient> GetPatientsQuery(PatientsContext context)
     {
-        return
-            from p in context.Patients
-            join n in context.PatientNames on p.Id equals n.Id
-            select new Patient
+        return context.Patients
+            .Include(x => x.Name)
+            .Include(x => x.Name.GivenNames)
+            .Select(x => new Patient
             {
                 Name = new Patient.PatientName
                 {
-                    Id = n.Id,
-                    Family = n.Family,
-                    Use = n.Use,
-                    Given = (from g in context.PatientGivenNames
-                            where g.PatientId == p.Id
-                            orderby g.Position
-                            select g.Name).ToArray(),
+                    Id = x.Name.Id,
+                    Family = x.Name.Family,
+                    Use = x.Name.Use,
+                    Given = x.Name.GivenNames.OrderBy(g => g.Position).Select(g => g.Name).ToArray()
                 },
-                Gender = p.Gender != null ? Enum.Parse<Gender>(p.Gender) : null,
-                BirthDate = p.BirthDate,
-                IsActive = p.IsActive,
-            };
+                Gender = x.Gender != null ? Enum.Parse<Gender>(x.Gender) : null,
+                BirthDate = x.BirthDate,
+                IsActive = x.IsActive,
+            });
     }
 }

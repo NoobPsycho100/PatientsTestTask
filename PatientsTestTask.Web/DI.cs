@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 using PatientsTestTask.Core.Services;
 using PatientsTestTask.Data.Context;
 using PatientsTestTask.Data.Services;
+using PatientsTestTask.Web.Model;
+using PatientsTestTask.Web.Validation;
 
 namespace PatientsTestTask.Web;
 
@@ -21,6 +24,8 @@ public static class DI
 
     private static void RegisterValidators(this IServiceCollection services)
     {
+        services.AddScoped<IValidator<AddPatientRequest>, AddPatientValidator>();
+        services.AddScoped<IValidator<UpdatePatientRequest>, UpdatePatientValidator>();
     }
 }
 

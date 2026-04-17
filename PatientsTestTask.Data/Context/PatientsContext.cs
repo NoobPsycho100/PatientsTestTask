@@ -16,9 +16,19 @@ public partial class PatientsContext : DbContext
     {
         modelBuilder.Entity<Patient>()
             .HasKey(x => x.Id);
+        modelBuilder.Entity<Patient>()
+            .HasOne<PatientName>(x => x.Name)
+            .WithOne()
+            .HasForeignKey<PatientName>(x => x.Id)
+            .IsRequired();
 
         modelBuilder.Entity<PatientName>()
             .HasKey(x => x.Id);
+        modelBuilder.Entity<PatientName>()
+            .HasMany<PatientGivenName>(x => x.GivenNames)
+            .WithOne()
+            .HasForeignKey(x => x.PatientId)
+            .HasPrincipalKey(x => x.Id);
 
         modelBuilder.Entity<PatientGivenName>()
             .HasKey(x => new { x.PatientId, x.Position });

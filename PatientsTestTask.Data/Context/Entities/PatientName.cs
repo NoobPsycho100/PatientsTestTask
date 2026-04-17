@@ -7,4 +7,6 @@ internal class PatientName
     public string? Use { get; set; }
 
     public required string Family { get; set; }
+
+    public List<PatientGivenName> GivenNames { get; set; } = [];
 }
