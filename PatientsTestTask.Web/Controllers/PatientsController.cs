@@ -20,7 +20,7 @@ public class PatientsController : ControllerBase
     [HttpGet]
     public async Task<PageResult<Patient>> GetPaged([FromQuery] GetPatientsRequest request)
     {
-        var patient = await _patientsService.GetPatients(request.BirthDateFrom, request.BirthDateTo, request.Page, request.PageSize);
+        var patient = await _patientsService.GetPatients(request.BirthDate, request.Page, request.PageSize);
         return patient;
     }
 

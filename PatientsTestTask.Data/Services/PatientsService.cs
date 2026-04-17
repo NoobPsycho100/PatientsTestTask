@@ -26,19 +26,14 @@ public class PatientsService: IPatientsService
         }
     }
 
-    public async Task<PageResult<Patient>> GetPatients(DateTime? birthDateFrom, DateTime? birthDateTo, int page, int pageSize = 100)
+    public async Task<PageResult<Patient>> GetPatients(string[] birthDateFilters, int page, int pageSize = 100)
     {
         using (var context = _contextFactory.CreateDbContext())
         {
             var query = GetPatientsQuery(context);
-            if (birthDateFrom != null)
+            foreach (var filter in birthDateFilters)
             {
-                query = query.Where(x => x.BirthDate >= birthDateFrom);
-            }
-
-            if (birthDateTo != null)
-            {
-                query = query.Where(x => x.BirthDate <= birthDateTo);
+                query = query.Where(filter.ToDateFilterExpression<Patient>(x => x.BirthDate));
             }
 
             return await query.OrderBy(x => x.Name.Id).ToPageResult(page, pageSize);

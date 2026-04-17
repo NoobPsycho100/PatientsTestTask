@@ -5,5 +5,6 @@
     <Build />
     <Deploy />
   </Project>
+  <Project Path="PatientsTestTask.Tests/PatientsTestTask.Tests.csproj" Id="7c45f72b-4aba-4c0b-920f-2c3758dad091" />
   <Project Path="PatientsTestTask.Web/PatientsTestTask.Web.csproj" />
 </Solution>

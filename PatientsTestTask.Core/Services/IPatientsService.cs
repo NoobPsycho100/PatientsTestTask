@@ -6,7 +6,7 @@ public interface IPatientsService
 {
     public Task<bool> IsPatientExists(Guid id);
 
-    public Task<PageResult<Patient>> GetPatients(DateTime? birthDateFrom, DateTime? birthDateTo, int page, int pageSize);
+    public Task<PageResult<Patient>> GetPatients(string[] birthDateFilters, int page, int pageSize);
 
     public Task<Patient?> GetPatientById(Guid id);
 

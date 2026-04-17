@@ -24,6 +24,7 @@ public static class DI
 
     private static void RegisterValidators(this IServiceCollection services)
     {
+        services.AddScoped<IValidator<GetPatientsRequest>, GetPatientsValidator>();
         services.AddScoped<IValidator<AddPatientRequest>, AddPatientValidator>();
         services.AddScoped<IValidator<UpdatePatientRequest>, UpdatePatientValidator>();
     }
