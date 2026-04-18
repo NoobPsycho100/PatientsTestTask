@@ -1,0 +1,991 @@
+{
+  "info": {
+    "_postman_id": "7257f8bc-74e4-4d09-856a-4e848e709690",
+    "name": "Patients test task api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "384402"
+  },
+  "item": [
+    {
+      "name": "patients",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "/patients/:id",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+                }
+              ]
+            },
+            {
+              "name": "/patients/:id",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"birthDate\": \"1968-04-17T03:56:55.316Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"unknown\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "text/plain"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"birthDate\": \"1968-04-17T03:56:55.316Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"unknown\",\n  \"isActive\": true\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+                }
+              ]
+            },
+            {
+              "name": "/patients/:id",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/patients/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "patients",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "/patients",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/patients?BirthDate=string&BirthDate=string&Page=2664&PageSize=2664",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients"
+              ],
+              "query": [
+                {
+                  "key": "BirthDate",
+                  "value": "string"
+                },
+                {
+                  "key": "BirthDate",
+                  "value": "string"
+                },
+                {
+                  "key": "Page",
+                  "value": "2664"
+                },
+                {
+                  "key": "PageSize",
+                  "value": "2664"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/patients?BirthDate=string&Page=2664&PageSize=2664",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ],
+                  "query": [
+                    {
+                      "key": "BirthDate",
+                      "value": "string"
+                    },
+                    {
+                      "key": "Page",
+                      "value": "2664"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "2664"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"page\": 1155,\n  \"pageSize\": 5009,\n  \"total\": 4957,\n  \"values\": [\n    {\n      \"birthDate\": \"2021-10-30T19:40:39.741Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"be37728e-1c98-bc0c-ce68-f2f08a8def2f\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"female\",\n      \"isActive\": false\n    },\n    {\n      \"birthDate\": \"2020-12-14T07:51:14.088Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"393ee40a-b187-7129-4356-4a8f041f3327\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"male\",\n      \"isActive\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "/patients",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/patients",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/patients",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "item": [
+        {
+          "name": "get all patients pager",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/patients?page=0&PageSize=100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "PageSize",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/patients?BirthDate=string&Page=2664&PageSize=2664",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ],
+                  "query": [
+                    {
+                      "key": "BirthDate",
+                      "value": "string"
+                    },
+                    {
+                      "key": "Page",
+                      "value": "2664"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "2664"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"page\": 1155,\n  \"pageSize\": 5009,\n  \"total\": 4957,\n  \"values\": [\n    {\n      \"birthDate\": \"2021-10-30T19:40:39.741Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"be37728e-1c98-bc0c-ce68-f2f08a8def2f\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"female\",\n      \"isActive\": false\n    },\n    {\n      \"birthDate\": \"2020-12-14T07:51:14.088Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"393ee40a-b187-7129-4356-4a8f041f3327\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"male\",\n      \"isActive\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "search patients by birthday",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/patients?birthDate=eq2026-04-18&birthDate=gt2020-01-01&birthDate=le2026-05-18&page=0&pageSize=100",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients"
+              ],
+              "query": [
+                {
+                  "key": "birthDate",
+                  "value": "eq2026-04-18"
+                },
+                {
+                  "key": "birthDate",
+                  "value": "gt2020-01-01"
+                },
+                {
+                  "key": "birthDate",
+                  "value": "le2026-05-18"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/patients?BirthDate=string&Page=2664&PageSize=2664",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ],
+                  "query": [
+                    {
+                      "key": "BirthDate",
+                      "value": "string"
+                    },
+                    {
+                      "key": "Page",
+                      "value": "2664"
+                    },
+                    {
+                      "key": "PageSize",
+                      "value": "2664"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"page\": 1155,\n  \"pageSize\": 5009,\n  \"total\": 4957,\n  \"values\": [\n    {\n      \"birthDate\": \"2021-10-30T19:40:39.741Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"be37728e-1c98-bc0c-ce68-f2f08a8def2f\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"female\",\n      \"isActive\": false\n    },\n    {\n      \"birthDate\": \"2020-12-14T07:51:14.088Z\",\n      \"name\": {\n        \"family\": \"string\",\n        \"id\": \"393ee40a-b187-7129-4356-4a8f041f3327\",\n        \"use\": \"string\",\n        \"given\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      \"gender\": \"male\",\n      \"isActive\": true\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "add patient with id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"birthDate\": \"2026-04-18T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"Иванов\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"official\",\n    \"given\": [\n      \"Сергей\",\n      \"Олегович\"\n    ]\n  },\n  \"gender\": \"male\",\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/patients",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "add patient",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"birthDate\": \"2026-04-18T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"Петрова\",\n    \"use\": \"official\",\n    \"given\": [\n      \"Анна\",\n      \"Олеговна\"\n    ]\n  },\n  \"gender\": \"female\",\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/patients",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "get patient by id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/patients/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "update patient",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "text/plain"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"birthDate\": \"2026-04-18T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"Иванов-Крамской\",\n    \"use\": \"official\",\n    \"given\": [\n      \"Сергей\",\n      \"Олегович\"\n    ]\n  },\n  \"gender\": \"male\",\n  \"isActive\": true\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/patients/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"birthDate\": \"1968-04-17T03:56:55.316Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"unknown\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"birthDate\": \"1953-11-16T01:30:26.927Z\",\n  \"name\": {\n    \"family\": \"string\",\n    \"id\": \"e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5\",\n    \"use\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": \"other\",\n  \"isActive\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete patient",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/patients/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "patients",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "e2fc3bb8-ab2e-ebdf-7e3d-ec35c6b6c2d5"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "OK",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/patients/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "patients",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "318410b6-ac2e-1d0a-2044-3ab87ffb1d41"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}
