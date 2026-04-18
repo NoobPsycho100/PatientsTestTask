@@ -7,5 +7,6 @@
   </Project>
   <Project Path="PatientsTestTask.DB/PatientsTestTask.DB2.csproj" />
   <Project Path="PatientsTestTask.Tests/PatientsTestTask.Tests.csproj" Id="7c45f72b-4aba-4c0b-920f-2c3758dad091" />
+  <Project Path="PatientsTestTask.Utility.App/PatientsTestTask.Utility.App.csproj" Id="70b7b3f9-2991-400d-b38b-b66c47735751" />
   <Project Path="PatientsTestTask.Web/PatientsTestTask.Web.csproj" />
 </Solution>

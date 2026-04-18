@@ -1,6 +1,8 @@
 Запустить можно командой из корня проекта:
 
+```bat
 docker-compose up
+```
 
 При этом
 1. будет собрана схема PatientsTestTask.DB.sqlproj в dacpac
@@ -9,4 +11,7 @@ docker-compose up
 4. будет запущен .net web api сервис из PatientsTestTask.Web.csproj
 
 После запуска swagger будет доступен по http://localhost:5000/swagger/index.html
-Коллекция для Postman - в файле Patients test task api.postman_collection.json
+
+Коллекция для Postman - в файле `Patients test task api.postman_collection.json`
+
+Проект PatientsTestTask.Utility.App.csproj позволяет добавить 100 случайных пациента.
